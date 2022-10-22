@@ -1,11 +1,16 @@
 <h3 class="text-center">Ingresar gastos</h3>
 <hr>
+<div *ngIf="formIncorrecto" class="text-center">
+  <span class="badge bg-danger textError">{{datosIncorrectos}}</span>
+</div>
 <div class="form-group mb-4">
   <label for="gastoIngresado">Gasto</label>
-  <input type="text" id="gastoIngresado" class="form-control form-control-lg" placeholder="Ejemplo: Wifi">
+  <input type="text" id="gastoIngresado" class="form-control form-control-lg" placeholder="Ejemplo: Wifi"
+    [(ngModel)]="nombreGasto">
 </div>
 <div class="form-group mb-4">
   <label for="montoIngresado">Monto gastado</label>
-  <input type="number" id="montoIngresado" class="form-control form-control-lg" placeholder="Ingrese el monto gastado">
+  <input type="number" id="montoIngresado" class="form-control form-control-lg" placeholder="Ingrese el monto gastado"
+    [(ngModel)]="montoGasto">
 </div>
-<button class="btn btn-secondary btn-lg btn-block">Agregar gasto</button>
+<button class="btn btn-secondary btn-lg btn-block" (click)="agregarGasto()">Agregar gasto</button>
