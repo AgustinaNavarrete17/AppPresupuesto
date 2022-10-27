@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PresupuestoService } from 'src/app/servicios/presupuesto.service';
 
 @Component({
   selector: 'app-listado-gastos',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoGastosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private presupuestoService : PresupuestoService) { 
+    this.presupuestoService.getGastos().subscribe(data =>{console.log(data);})
+  }
 
   ngOnInit() {
   }
