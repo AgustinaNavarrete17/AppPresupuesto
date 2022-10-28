@@ -18,7 +18,7 @@ export class PresupuestoService {
    }
 
    agregarGasto (gasto : any) {
-   this.restante = this.restante - gasto.montoGasto;
+   this.restante = this.restante - gasto.cantidad;
    this.gastos.next(gasto)
    }
 

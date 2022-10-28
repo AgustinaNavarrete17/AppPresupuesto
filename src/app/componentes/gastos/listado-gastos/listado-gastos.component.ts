@@ -36,4 +36,14 @@ export class ListadoGastosComponent implements OnInit {
     this.suscription.unsubscribe();
   }
 
+  cambioColorRestante() {
+  if (this.presupuesto / 4 > this.presupuestoRestante){
+    return 'alert alert-danger';
+  } else if (this.presupuesto / 2 > this.presupuestoRestante){
+    return 'alert alert-warning';
+  } else {
+    return 'alert alert-secondary';
+  }
+  }
+
 }

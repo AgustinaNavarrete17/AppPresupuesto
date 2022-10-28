@@ -26,6 +26,7 @@ export class GastoIngresadoComponent implements OnInit {
 
   agregarGasto(){
     if (this.montoGasto > this.presupuestoService.restante){
+      this.formIncorrecto = true;
     this.datosIncorrectos = 'La cantidad ingresada supera la cantidad restante';
     return
     }
